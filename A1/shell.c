@@ -37,10 +37,12 @@ int main(int argc, char* argv[])
     printf("Welcome to the Hank Zhang shell!\n");
     printf("Version 1.0 created January 2019\n");
 
-    while ()
+    printf("%s ", prompt);
+
+    while (fgets(input, 999, stdin))
     {
-        printf("%s ", prompt);
-        fgets(input, 999, stdin);
+        //printf("%s ", prompt);
+        //fgets(input, 999, stdin);
         errorCode = parse(input);
         switch (errorCode)
         {
@@ -62,6 +64,7 @@ int main(int argc, char* argv[])
             default:
                 break;
         }
+        printf("%s ", prompt);
     }
     return 0;
 }
